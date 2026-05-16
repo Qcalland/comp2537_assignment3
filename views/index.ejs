@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") %>
+
+  <header class="site-header">
+    <div class="controls-bar">
+      <div class="control-group">
+        <span class="control-label">Difficulty</span>
+        <label class="radio-label"><input type="radio" name="difficulty" value="easy" checked> Easy</label>
+        <label class="radio-label"><input type="radio" name="difficulty" value="medium"> Medium</label>
+        <label class="radio-label"><input type="radio" name="difficulty" value="hard"> Hard</label>
+      </div>
+      <div class="control-group buttons-row">
+        <button type="button" id="btn-start" class="btn btn-primary">Start</button>
+        <button type="button" id="btn-reset" class="btn btn-secondary" disabled>Reset</button>
+        <button type="button" id="btn-peek" class="btn btn-accent" disabled>Peek</button>
+      </div>
+      <div class="control-group theme-row">
+        <span class="control-label">Theme</span>
+        <button type="button" id="btn-theme" class="btn btn-ghost" aria-label="Toggle light or dark theme">Dark mode</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="status-panel" aria-live="polite">
+    <div class="stat"><span class="stat-label">Clicks</span> <strong id="stat-clicks">0</strong></div>
+    <div class="stat"><span class="stat-label">Matched</span> <strong id="stat-matched">0</strong></div>
+    <div class="stat"><span class="stat-label">Pairs left</span> <strong id="stat-left">0</strong></div>
+    <div class="stat"><span class="stat-label">Total pairs</span> <strong id="stat-total">0</strong></div>
+    <div class="stat stat-time"><span class="stat-label">Time</span> <strong id="stat-time">—</strong></div>
+    <div class="stat peek-stat"><span class="stat-label">Peek uses</span> <strong id="stat-peek">2</strong></div>
+  </section>
+
+  <div id="message_banner" class="message-banner message-banner--hidden" role="status"></div>
+
+  <main class="game-main">
+    <div id="game_grid" class="game-grid game-grid--empty"></div>
+  </main>
+
+  <p id="error_line" class="error-line" role="alert" aria-live="assertive"></p>
+
+<%- include("partials/footer.ejs") %>
